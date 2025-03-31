@@ -22,6 +22,11 @@ namespace smartcityapi.Context
 
 		public DbSet<master_user> master_user { get; set; }
 		public DbSet<role_permissions> role_permissions { get; set; }
+		public DbSet<department_permissions> department_permissions { get; set; }
+
+		public DbSet<Asset_Type_Master> Asset_Type_Master { get; set; }
+
+		public DbSet<Master_Device> Master_Device { get; set; }
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
@@ -36,9 +41,9 @@ namespace smartcityapi.Context
 
 			//builder.Entity<customer_users>().ToTable(tb => tb.HasTrigger("trg_bU_customer_user"));
 			//builder.Entity<customer_users>().ToTable(tb => tb.HasTrigger("trg_bI_customer_user"));
-			//builder.Entity<customer_user_device_mapping>().HasKey(c => new { c.fk_customer_user_id, c.fk_device_id });
+			builder.Entity<role_permissions>().HasKey(c => new { c.fk_module_id, c.fk_page_id , c.fk_role_id});
 
-			builder.Entity<role_permissions>().HasNoKey();
+			//builder.Entity<role_permissions>().HasNoKey();
 
 			
 		}

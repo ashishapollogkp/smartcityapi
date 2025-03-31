@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -26,6 +26,25 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IModuleService, ModuleService>();
+builder.Services.AddTransient<ISharedService, SharedService>();
+builder.Services.AddTransient<IPageService, PageService>();
+
+builder.Services.AddTransient<IDepartmentService, DepartmentService>();
+builder.Services.AddTransient<IRoleService, RoleService>();
+builder.Services.AddTransient<IRoleAccessService, RoleAccessService>();
+
+builder.Services.AddTransient<IUserMgtService, UserMgtService>();
+
+builder.Services.AddTransient<IDepartmentService, DepartmentService>();
+
+builder.Services.AddTransient<IDepartmentAccessService, DepartmentAccessService>();
+
+builder.Services.AddTransient<IAssetTypeService, AssetTypeService>();
+
+builder.Services.AddTransient<IDeviceService, DeviceService>();
+
+
+
 builder.Services.AddScoped<UserService>();
 
 
@@ -55,30 +74,35 @@ builder.Services.AddSwaggerGen(c =>
 {
 	c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
 	{
-		Description = @"JWT Authorization Example : 'Bearer eyeleieieekeieieie",
+		Description = "Enter 'Bearer {your_token}' without quotes.",
 		Name = "Authorization",
 		In = ParameterLocation.Header,
-		Type = SecuritySchemeType.ApiKey,
-		Scheme = "Bearer"
+		Type = SecuritySchemeType.Http, // ✅ Use Http instead of ApiKey
+		Scheme = "Bearer" // ✅ Correct Scheme
 	});
 
-	c.AddSecurityRequirement(new OpenApiSecurityRequirement(){
+
+
+	c.AddSecurityRequirement(new OpenApiSecurityRequirement
+	{
 		{
-			new OpenApiSecurityScheme{
+			new OpenApiSecurityScheme
+			{
 				Reference = new OpenApiReference
 				{
 					Type = ReferenceType.SecurityScheme,
 					Id = "Bearer"
 				},
-				Scheme = "outh2",
-				Name="Bearer",
+				Scheme = "Bearer", // ✅ Fixed scheme
+                Name = "Authorization",
 				In = ParameterLocation.Header,
 			},
 			new List<string>()
 		}
 	});
-
 });
+
+
 
 
 
@@ -96,8 +120,15 @@ app.UseCors("AllowAll"); // Apply CORS policy
 if (app.Environment.IsDevelopment() || app.Environment.IsStaging() || app.Environment.IsProduction())
 {
 	app.UseSwagger();
-	app.UseSwaggerUI();
+	
+
+	app.UseSwaggerUI(options =>
+	{
+		options.DefaultModelsExpandDepth(-1); // Hides the Schemas tab
+	});
 }
+
+
 
 
 

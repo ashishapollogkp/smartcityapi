@@ -50,7 +50,7 @@ namespace smartcityapi.Services
 				}
 
 				var emp = await _jwtContext.master_user
-					.SingleOrDefaultAsync(s => s.login_id == loginRequest.Username && s.is_active == 1);
+					.SingleOrDefaultAsync(s => s.login_id == loginRequest.Username && s.is_deleted == 0);//&& s.is_active == 1
 
 				if (emp == null)
 				{
@@ -62,6 +62,15 @@ namespace smartcityapi.Services
 					return res;
 
 				}
+				if (emp.is_active == 0)
+				{
+					res.ActionResponse = "user Deactivated !";
+					res.StatusCode = HttpStatusCode.NotFound;
+					res.IsSuccess = false;
+					return res;
+
+				}
+
 
 				// Encrypt input password for comparison
 				string encryptedPassword = CryptorEngine.Encrypt(loginRequest.Password, true);
@@ -88,7 +97,8 @@ namespace smartcityapi.Services
 							new Claim("Id", emp.pk_user_id.ToString()),
 							new Claim("UserName", emp.user_name),
 							new Claim("Email", emp.email),
-							new Claim("RoleId", emp.fk_role_id.ToString())
+							new Claim("RoleId", emp.fk_role_id.ToString()),
+								new Claim("DeptId", emp.fk_department_id.ToString())
 						};
 
 				var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));

@@ -40,13 +40,19 @@ namespace smartcityapi.Services
 				};
 			}
 
+			// Calculate the next module order (if necessary)
+
+			int maxOrder = await _sqlDBContext.master_module
+				.Where(x => x.is_deleted == 0)
+				.MaxAsync(x => (int?)x.module_order) ?? 0;
+
 			// Create new module
 			var newModule = new master_module
 			{
 				module_name = request.Module_Name,
 				module_icon = request.Module_Icon,
 				module_url = request.Module_URL,
-				module_order = request.Module_Order,
+				module_order = maxOrder + 1, // Ensure order consistency
 				is_active = 1,
 				is_deleted = 0,
 				created_by = 1,
@@ -201,7 +207,7 @@ namespace smartcityapi.Services
 					{
 						updatedata.module_name = request.Module_Name;
 						updatedata.module_icon = request.Module_Icon;
-						updatedata.module_order = request.Module_Order;
+						//updatedata.module_order = request.Module_Order;
 						updatedata.module_url = request.Module_URL;
 				
 

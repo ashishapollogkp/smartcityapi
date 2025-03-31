@@ -24,8 +24,6 @@
 
   <ItemGroup>
     <Folder Include="Model\rolepermission\" />
-    <Folder Include="Model\role\" />
-    <Folder Include="Model\pages\" />
   </ItemGroup>
 
 </Project>

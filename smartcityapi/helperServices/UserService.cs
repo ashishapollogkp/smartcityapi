@@ -33,5 +33,11 @@ namespace smartcityapi.helperServices
 			var roleIdString = _httpContextAccessor.HttpContext?.User?.FindFirst("RoleId")?.Value;
 			return long.TryParse(roleIdString, out long roleId) ? roleId : 0;
 		}
+
+		public long GetUserDeptId()
+		{
+			var DeptIdString = _httpContextAccessor.HttpContext?.User?.FindFirst("DeptId")?.Value;
+			return long.TryParse(DeptIdString, out long DeptId) ? DeptId : 0;
+		}
 	}
 }

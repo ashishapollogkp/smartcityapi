@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using smartcityapi.Interface;
@@ -9,6 +10,7 @@ namespace smartcityapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+	[Authorize]
     public class ModuleController : ControllerBase
     {
 		

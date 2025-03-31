@@ -16,6 +16,7 @@ namespace smartcityapi.Data
 		public DateTime? last_updated_date { get; set; }
 		public int? deleted_by { get; set; }
 		public DateTime? deleted_date { get; set; }
-		public long parent_id { get; set; }
+		public long? parent_id { get; set; }
+		public int? level_value { get; set; }
 	}
 }
