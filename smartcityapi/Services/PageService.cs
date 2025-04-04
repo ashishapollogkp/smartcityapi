@@ -120,7 +120,7 @@ namespace smartcityapi.Services
 					page_name = request.Page_Name,
 					page_icon = request.Page_Icon,
 					page_url = request.Page_Url,
-					page_order = maxOrder + 1,
+					page_order = request.page_order,
 					is_active = 1,
 					is_deleted = 0,
 					created_by = 1,
@@ -170,6 +170,7 @@ namespace smartcityapi.Services
 				existingPage.page_name = request.Page_Name;
 				existingPage.page_url = request.Page_Url;
 				existingPage.page_icon = request.Page_Icon;
+				existingPage.page_order = request.page_order;
 				existingPage.last_updated_by = 0;
 				existingPage.last_updated_date = DateTime.Now;
 

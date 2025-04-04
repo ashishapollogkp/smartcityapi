@@ -32,9 +32,6 @@ namespace smartcityapi.Services
 			try
 			{
 
-
-
-
 				result = await (from a in _sqlDBContext.master_module
 								
 								where a.is_deleted == 0 

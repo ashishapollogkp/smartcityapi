@@ -25,32 +25,84 @@ namespace smartcityapi.Services
 		public async Task<ApiResponse> GetRoleListAsync(GetRoleRequestDTO request)
 		{
 
-			
 
+			var dept_id = _userService.GetUserDeptId();
+			var role_id = _userService.GetUserRoleId();
+
+			var levelvalue = _sqlDBContext.master_role.Where(x => x.pk_role_id == role_id && x.fk_department_id == dept_id).FirstOrDefault();
 
 
 			List<RoleGetViewDTO> result = null;
 			try
 			{
-				result = await (from a in _sqlDBContext.master_role
-								join b in _sqlDBContext.master_department
-									on a.fk_department_id equals b.pk_department_id into moduleJoin
-								from b in moduleJoin.DefaultIfEmpty() // ✅ Left Join to prevent null reference issues
-								where a.is_deleted == 0 && a.fk_department_id == request.Department_Id 
-								orderby a.role_name
-								select new RoleGetViewDTO
-								{
-									is_active = a.is_active,
-									is_deleted = a.is_deleted,
-									Department_Id = request.Department_Id,
-									Department_Name = b.department_name,
-									Role_Id = a.pk_role_id,
-									Role_Name=a.role_name
+				if (dept_id > 1)
+				{
+					result = await (from a in _sqlDBContext.master_role
 
-									
-								})
-					   .AsNoTracking() // ✅ Improves performance
-					   .ToListAsync();
+
+									join b in _sqlDBContext.master_department
+										on a.fk_department_id equals b.pk_department_id into moduleJoin
+									from b in moduleJoin.DefaultIfEmpty() // ✅ Left Join to prevent null reference issues
+
+
+									join ml in _sqlDBContext.master_level
+										on a.level_value equals ml.level_order into masterRoleJoin
+									from ml in masterRoleJoin.DefaultIfEmpty() // ✅ Left Join to prevent null reference issues
+
+
+
+									where a.is_deleted == 0 && a.fk_department_id == request.Department_Id && a.level_value > levelvalue.level_value
+									orderby a.role_name
+									select new RoleGetViewDTO
+									{
+										is_active = a.is_active,
+										is_deleted = a.is_deleted,
+										Department_Id = request.Department_Id,
+										Department_Name = b.department_name,
+										Role_Id = a.pk_role_id,
+										Role_Name = a.role_name,
+										Level_Name = ml.level_name,
+										level_value = ml.level_order
+
+
+									})
+						   .AsNoTracking() // ✅ Improves performance
+						   .ToListAsync();
+				}
+				else {
+
+					result = await (from a in _sqlDBContext.master_role
+
+
+									join b in _sqlDBContext.master_department
+										on a.fk_department_id equals b.pk_department_id into moduleJoin
+									from b in moduleJoin.DefaultIfEmpty() // ✅ Left Join to prevent null reference issues
+
+
+									join ml in _sqlDBContext.master_level
+										on a.level_value equals ml.level_order into masterRoleJoin
+									from ml in masterRoleJoin.DefaultIfEmpty() // ✅ Left Join to prevent null reference issues
+
+
+
+									where a.is_deleted == 0 && a.fk_department_id == request.Department_Id 
+									orderby a.role_name
+									select new RoleGetViewDTO
+									{
+										is_active = a.is_active,
+										is_deleted = a.is_deleted,
+										Department_Id = request.Department_Id,
+										Department_Name = b.department_name,
+										Role_Id = a.pk_role_id,
+										Role_Name = a.role_name,
+										Level_Name = ml.level_name,
+										level_value = ml.level_order
+
+
+									})
+							   .AsNoTracking() // ✅ Improves performance
+							   .ToListAsync();
+				}
 
 
 
@@ -164,6 +216,7 @@ namespace smartcityapi.Services
 				existingPage.role_name = request.Role_Name;				
 				existingPage.last_updated_by = 0;
 				existingPage.last_updated_date = DateTime.Now;
+				existingPage.level_value = request.level_value;
 
 				_sqlDBContext.master_role.Update(existingPage);
 				await _sqlDBContext.SaveChangesAsync();

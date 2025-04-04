@@ -591,6 +591,198 @@
         }
       }
     },
+    "/api/Device/CreateDevice": {
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDeviceRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDeviceRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateDeviceRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Device/GetDeviceList": {
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDeviceRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDeviceRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDeviceRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Device/UpdateDevice": {
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDeviceRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDeviceRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateDeviceRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Device/DeleteDevice": {
+      "post": {
+        "tags": [
+          "Device"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteDeviceRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteDeviceRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteDeviceRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Module/CreateModuleAsync": {
       "post": {
         "tags": [
@@ -1254,54 +1446,6 @@
         }
       }
     },
-    "/api/Shared/GetRoleListByDept": {
-      "post": {
-        "tags": [
-          "Shared"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetRoleListRequestDTO"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetRoleListRequestDTO"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetRoleListRequestDTO"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ApiResponse"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/Shared/GetRoleList": {
       "get": {
         "tags": [
@@ -1364,6 +1508,131 @@
       "get": {
         "tags": [
           "Shared"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Shared/GetRoleListByDept": {
+      "post": {
+        "tags": [
+          "Shared"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Shared/GetModuleListByDept": {
+      "post": {
+        "tags": [
+          "Shared"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetDepartmentWiseRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Transformer/GetTransformerDashboard": {
+      "get": {
+        "tags": [
+          "Transformer"
         ],
         "responses": {
           "200": {
@@ -1684,6 +1953,56 @@
         },
         "additionalProperties": false
       },
+      "CreateDeviceRequestDTO": {
+        "type": "object",
+        "properties": {
+          "device_Type_Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "device_Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Model": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_No": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_IMEI": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Vender": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Manufacture_Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "device_Expiry_Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "siM_No": {
+            "type": "string",
+            "nullable": true
+          },
+          "siM_Operator": {
+            "type": "string",
+            "nullable": true
+          },
+          "department_Id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUserRequestDTO": {
         "type": "object",
         "properties": {
@@ -1730,6 +2049,19 @@
             "format": "int64"
           },
           "department_Id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteDeviceRequestDTO": {
+        "required": [
+          "device_Id"
+        ],
+        "type": "object",
+        "properties": {
+          "device_Id": {
             "type": "integer",
             "format": "int64"
           }
@@ -1846,6 +2178,37 @@
         },
         "additionalProperties": false
       },
+      "GetDepartmentWiseRequestDTO": {
+        "required": [
+          "department_Id"
+        ],
+        "type": "object",
+        "properties": {
+          "department_Id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetDeviceRequestDTO": {
+        "required": [
+          "department_Id",
+          "device_Type_Id"
+        ],
+        "type": "object",
+        "properties": {
+          "department_Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "device_Type_Id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
       "GetModulePagesDTO": {
         "required": [
           "module_id"
@@ -1880,19 +2243,6 @@
             "format": "int64"
           },
           "module_Id": {
-            "type": "integer",
-            "format": "int64"
-          }
-        },
-        "additionalProperties": false
-      },
-      "GetRoleListRequestDTO": {
-        "required": [
-          "department_Id"
-        ],
-        "type": "object",
-        "properties": {
-          "department_Id": {
             "type": "integer",
             "format": "int64"
           }
@@ -2011,6 +2361,11 @@
           "module_Icon": {
             "type": "string",
             "nullable": true
+          },
+          "module_Order": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -2047,6 +2402,10 @@
           "module_Icon": {
             "type": "string",
             "nullable": true
+          },
+          "module_Order": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -2096,6 +2455,11 @@
           },
           "page_Icon": {
             "type": "string",
+            "nullable": true
+          },
+          "page_order": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
@@ -2244,6 +2608,60 @@
           "asset_Description": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateDeviceRequestDTO": {
+        "type": "object",
+        "properties": {
+          "pk_Device_Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "device_Type_Id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "device_Name": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Model": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_No": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_IMEI": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Vender": {
+            "type": "string",
+            "nullable": true
+          },
+          "device_Manufacture_Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "device_Expiry_Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "siM_No": {
+            "type": "string",
+            "nullable": true
+          },
+          "siM_Operator": {
+            "type": "string",
+            "nullable": true
+          },
+          "department_Id": {
+            "type": "integer",
+            "format": "int64"
           }
         },
         "additionalProperties": false

@@ -10,7 +10,7 @@ namespace smartcityapi.Data
 		public string page_name { get; set; }
 		public string page_url { get; set; }
 		public string? page_icon { get; set; }
-		public int page_order { get; set; }
+		public int? page_order { get; set; }
 		public int is_active { get; set; }
 		public int is_deleted { get; set; }
 		public int? created_by { get; set; }

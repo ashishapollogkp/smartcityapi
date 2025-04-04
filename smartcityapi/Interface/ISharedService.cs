@@ -7,11 +7,13 @@ namespace smartcityapi.Interface
 	public interface ISharedService
 	{
 		Task<ApiResponse> GetModuleList();
-		Task<ApiResponse> GetDepartmentList();
-		Task<ApiResponse> GetRoleListByDept(GetRoleListRequestDTO request);
-
+		Task<ApiResponse> GetDepartmentList();	
 		Task<ApiResponse> GetRoleList();
 		Task<ApiResponse> GetLevelList();
 		Task<ApiResponse> GetAssetTypeList();
+
+
+		Task<ApiResponse> GetRoleListByDept(GetDepartmentWiseRequestDTO request);
+		Task<ApiResponse> GetModuleListByDept(GetDepartmentWiseRequestDTO request);
 	}
 }

@@ -70,17 +70,38 @@ namespace smartcityapi.Services
 
 		public async Task<ApiResponse> GetDepartmentList()
 		{
+			var dept_id = _userService.GetUserDeptId();
+		
+
+
 			try
 			{
-				var result = await _sqlDBContext.master_department
-					.Where(stop => stop.is_deleted == 0)
-					.OrderBy(stop => stop.department_name)
-					.Select(stop => new ddlViewDTO
-					{
-						Value = stop.pk_department_id,
-						Text = stop.department_name
-					})
-					.ToListAsync();
+				List<ddlViewDTO> result = new List<ddlViewDTO>();
+				if (dept_id != 1)
+				{
+					result = await _sqlDBContext.master_department
+					   .Where(stop => stop.is_deleted == 0 && stop.pk_department_id== dept_id)
+					   .OrderBy(stop => stop.department_name)
+					   .Select(stop => new ddlViewDTO
+					   {
+						   Value = stop.pk_department_id,
+						   Text = stop.department_name
+					   })
+					   .ToListAsync();
+				}
+				else {
+
+					result = await _sqlDBContext.master_department
+						   .Where(stop => stop.is_deleted == 0 )
+						   .OrderBy(stop => stop.department_name)
+						   .Select(stop => new ddlViewDTO
+						   {
+							   Value = stop.pk_department_id,
+							   Text = stop.department_name
+						   })
+						   .ToListAsync();
+
+				}
 
 				if (result.Any()) // More efficient than result.Count > 0
 				{
@@ -114,51 +135,7 @@ namespace smartcityapi.Services
 			}
 		}
 
-		public async Task<ApiResponse> GetRoleListByDept(GetRoleListRequestDTO request)
-		{
-			try
-			{
-				var result = await _sqlDBContext.master_role
-					.Where(stop => stop.is_deleted == 0 && stop.fk_department_id== request.Department_Id)
-					.OrderBy(stop => stop.role_name)
-					.Select(stop => new ddlViewDTO
-					{
-						Value = stop.pk_role_id,
-						Text = stop.role_name
-					})
-					.ToListAsync();
-
-				if (result.Any()) // More efficient than result.Count > 0
-				{
-					return new ApiResponse
-					{
-						Result = result,
-						StatusCode = HttpStatusCode.OK,
-						IsSuccess = true
-					};
-				}
-				else
-				{
-					return new ApiResponse
-					{
-						ActionResponse = "No Data",
-						Result = null,
-						StatusCode = HttpStatusCode.NoContent,
-						IsSuccess = false
-					};
-				}
-			}
-			catch (Exception e)
-			{
-				return new ApiResponse
-				{
-					ActionResponse = $"Error: {e.Message}",
-					Result = null,
-					StatusCode = HttpStatusCode.InternalServerError,
-					IsSuccess = false
-				};
-			}
-		}
+		
 
 		public async Task<ApiResponse> GetRoleList()
 		{
@@ -332,6 +309,131 @@ namespace smartcityapi.Services
 						Text = stop.asset_name
 					})
 					.ToListAsync();
+
+				if (result.Any()) // More efficient than result.Count > 0
+				{
+					return new ApiResponse
+					{
+						Result = result,
+						StatusCode = HttpStatusCode.OK,
+						IsSuccess = true
+					};
+				}
+				else
+				{
+					return new ApiResponse
+					{
+						ActionResponse = "No Data",
+						Result = null,
+						StatusCode = HttpStatusCode.NoContent,
+						IsSuccess = false
+					};
+				}
+			}
+			catch (Exception e)
+			{
+				return new ApiResponse
+				{
+					ActionResponse = $"Error: {e.Message}",
+					Result = null,
+					StatusCode = HttpStatusCode.InternalServerError,
+					IsSuccess = false
+				};
+			}
+		}
+
+
+
+		public async Task<ApiResponse> GetRoleListByDept(GetDepartmentWiseRequestDTO request)
+		{
+
+			var dept_id = _userService.GetUserDeptId();
+			var role_id = _userService.GetUserRoleId();
+
+			var levelvalue = _sqlDBContext.master_role.Where(x => x.pk_role_id == role_id && x.fk_department_id == dept_id).FirstOrDefault();
+
+
+			try
+			{
+				List<ddlViewDTO> result = new List<ddlViewDTO>();
+
+				if (dept_id == 1)
+				{
+
+					result = await _sqlDBContext.master_role
+					   .Where(stop => stop.is_deleted == 0 && stop.fk_department_id == request.Department_Id)
+					   .OrderBy(stop => stop.role_name)
+					   .Select(stop => new ddlViewDTO
+					   {
+						   Value = stop.pk_role_id,
+						   Text = stop.role_name
+					   })
+					   .ToListAsync();
+				}
+				else {
+
+
+					result = await _sqlDBContext.master_role
+				   .Where(stop => stop.is_deleted == 0 && stop.fk_department_id == request.Department_Id && stop.level_value > levelvalue.level_value)
+				   .OrderBy(stop => stop.role_name)
+				   .Select(stop => new ddlViewDTO
+				   {
+					   Value = stop.pk_role_id,
+					   Text = stop.role_name
+				   })
+				   .ToListAsync();
+
+				}
+
+				if (result.Any()) // More efficient than result.Count > 0
+				{
+					return new ApiResponse
+					{
+						Result = result,
+						StatusCode = HttpStatusCode.OK,
+						IsSuccess = true
+					};
+				}
+				else
+				{
+					return new ApiResponse
+					{
+						ActionResponse = "No Data",
+						Result = null,
+						StatusCode = HttpStatusCode.NoContent,
+						IsSuccess = false
+					};
+				}
+			}
+			catch (Exception e)
+			{
+				return new ApiResponse
+				{
+					ActionResponse = $"Error: {e.Message}",
+					Result = null,
+					StatusCode = HttpStatusCode.InternalServerError,
+					IsSuccess = false
+				};
+			}
+		}
+
+		public async Task<ApiResponse> GetModuleListByDept(GetDepartmentWiseRequestDTO request)
+		{
+			try
+			{
+
+				var result = await (from dp in _sqlDBContext.department_permissions
+									join m in _sqlDBContext.master_module
+									on dp.fk_module_id equals m.pk_module_id into moduleGroup
+									from module in moduleGroup.DefaultIfEmpty() // Left Join
+									where dp.fk_department_id == request.Department_Id && dp.is_active==1
+									orderby module.module_name
+									select new ddlViewDTO
+									{
+										Value = module.pk_module_id,
+										Text = module.module_name
+									}).ToListAsync();
+
 
 				if (result.Any()) // More efficient than result.Count > 0
 				{

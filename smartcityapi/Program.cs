@@ -28,26 +28,16 @@ builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IModuleService, ModuleService>();
 builder.Services.AddTransient<ISharedService, SharedService>();
 builder.Services.AddTransient<IPageService, PageService>();
-
 builder.Services.AddTransient<IDepartmentService, DepartmentService>();
 builder.Services.AddTransient<IRoleService, RoleService>();
 builder.Services.AddTransient<IRoleAccessService, RoleAccessService>();
-
 builder.Services.AddTransient<IUserMgtService, UserMgtService>();
-
 builder.Services.AddTransient<IDepartmentService, DepartmentService>();
-
 builder.Services.AddTransient<IDepartmentAccessService, DepartmentAccessService>();
-
 builder.Services.AddTransient<IAssetTypeService, AssetTypeService>();
-
 builder.Services.AddTransient<IDeviceService, DeviceService>();
-
-
-
+builder.Services.AddTransient<ITransformerService, TransformerService>();
 builder.Services.AddScoped<UserService>();
-
-
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
 	options.RequireHttpsMetadata = false;
@@ -81,8 +71,6 @@ builder.Services.AddSwaggerGen(c =>
 		Scheme = "Bearer" // ✅ Correct Scheme
 	});
 
-
-
 	c.AddSecurityRequirement(new OpenApiSecurityRequirement
 	{
 		{
@@ -101,14 +89,6 @@ builder.Services.AddSwaggerGen(c =>
 		}
 	});
 });
-
-
-
-
-
-
-
-
 
 builder.Services.AddAuthorization();
 

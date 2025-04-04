@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using smartcityapi.Interface;
 using smartcityapi.Model.commanResponce;
@@ -9,7 +10,8 @@ namespace smartcityapi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase
+	[Authorize]
+	public class UserController : ControllerBase
     {
         private readonly IUserMgtService _Service;
 		protected ApiResponse _response;

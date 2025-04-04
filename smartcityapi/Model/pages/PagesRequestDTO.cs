@@ -13,7 +13,7 @@ namespace smartcityapi.Model.pages
 		[Required]
 		public string Page_Url { get; set; }
 		public string Page_Icon { get; set; }
-		
-		
+
+		public int? page_order { get; set; }
 	}
 }

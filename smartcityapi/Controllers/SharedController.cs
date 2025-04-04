@@ -67,28 +67,7 @@ namespace smartcityapi.Controllers
 
 		}
 
-		[HttpPost]
-		[Route("GetRoleListByDept")]
-		public async Task<ActionResult<ApiResponse>> GetRoleListByDept(GetRoleListRequestDTO request)
-		{
-			try
-			{
-
-				_response = await _Service.GetRoleListByDept(request);
-
-				return Ok(_response);
-
-			}
-			catch (Exception ex)
-			{
-				_response.IsSuccess = false;
-				_response.ErrorMessages
-					 = new List<string>() { ex.ToString() };
-			}
-			return _response;
-
-
-		}
+		
 
 
 		[HttpGet]
@@ -146,6 +125,54 @@ namespace smartcityapi.Controllers
 			{
 
 				_response = await _Service.GetAssetTypeList();
+
+				return Ok(_response);
+
+			}
+			catch (Exception ex)
+			{
+				_response.IsSuccess = false;
+				_response.ErrorMessages
+					 = new List<string>() { ex.ToString() };
+			}
+			return _response;
+
+
+		}
+
+
+		[HttpPost]
+		[Route("GetRoleListByDept")]
+		public async Task<ActionResult<ApiResponse>> GetRoleListByDept(GetDepartmentWiseRequestDTO request)
+		{
+			try
+			{
+
+				_response = await _Service.GetRoleListByDept(request);
+
+				return Ok(_response);
+
+			}
+			catch (Exception ex)
+			{
+				_response.IsSuccess = false;
+				_response.ErrorMessages
+					 = new List<string>() { ex.ToString() };
+			}
+			return _response;
+
+
+		}
+
+
+		[HttpPost]
+		[Route("GetModuleListByDept")]
+		public async Task<ActionResult<ApiResponse>> GetModuleListByDept(GetDepartmentWiseRequestDTO request)
+		{
+			try
+			{
+
+				_response = await _Service.GetModuleListByDept(request);
 
 				return Ok(_response);
 

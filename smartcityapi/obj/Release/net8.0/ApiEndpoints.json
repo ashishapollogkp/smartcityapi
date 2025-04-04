@@ -1,0 +1,1046 @@
+[
+  {
+    "ContainingType": "smartcityapi.Controllers.AssetTypeController",
+    "Method": "CreateAssetType",
+    "RelativePath": "api/AssetType/CreateAssetType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.AssetType.CreateAssetTypeRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AssetTypeController",
+    "Method": "DeleteAssetType",
+    "RelativePath": "api/AssetType/DeleteAssetType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.AssetType.DeleteAssetTypeRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AssetTypeController",
+    "Method": "GetAssetTypeList",
+    "RelativePath": "api/AssetType/GetAssetTypeList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.AssetType.GetAssetTypeRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AssetTypeController",
+    "Method": "UpdateAssetType",
+    "RelativePath": "api/AssetType/UpdateAssetType",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.AssetType.UpdateAssetTypeRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AuthController",
+    "Method": "GetLoginBasedModule",
+    "RelativePath": "api/Auth/GetLoginBasedModule",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AuthController",
+    "Method": "GetModuleBasedPages",
+    "RelativePath": "api/Auth/GetModuleBasedPages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "smartcityapi.Model.user.GetModulePagesDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginRequest",
+        "Type": "smartcityapi.Model.login.loginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentController",
+    "Method": "AddEditDepartmentAsync",
+    "RelativePath": "api/Department/AddEditDepartmentAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Department.DepartmentRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentController",
+    "Method": "DeleteDepartmentAsync",
+    "RelativePath": "api/Department/DeleteDepartmentAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Department.DepertmentDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentController",
+    "Method": "GetDepartmentListAsync",
+    "RelativePath": "api/Department/GetDepartmentListAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentAccessController",
+    "Method": "AddEditDepartmentAccessAsync",
+    "RelativePath": "api/DepartmentAccess/AddEditDepartmentAccessAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.DepartmentAccess.DepartmentAccessRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentAccessController",
+    "Method": "DeleteDepartmentAccessAsync",
+    "RelativePath": "api/DepartmentAccess/DeleteDepartmentAccessAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.DepartmentAccess.DepartmentAccessDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DepartmentAccessController",
+    "Method": "GetDepartmentAccessListAsync",
+    "RelativePath": "api/DepartmentAccess/GetDepartmentAccessListAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.DepartmentAccess.GetDepartmentAccessRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "CreateDevice",
+    "RelativePath": "api/Device/CreateDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.CreateDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "DeleteDevice",
+    "RelativePath": "api/Device/DeleteDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.DeleteDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "GetDeviceList",
+    "RelativePath": "api/Device/GetDeviceList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.Device.GetDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "UpdateDevice",
+    "RelativePath": "api/Device/UpdateDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.UpdateDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.ModuleController",
+    "Method": "CreateModuleAsync",
+    "RelativePath": "api/Module/CreateModuleAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.module.ModuleAddRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.ModuleController",
+    "Method": "DeleteModuleAsync",
+    "RelativePath": "api/Module/DeleteModuleAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.module.ModuleDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.ModuleController",
+    "Method": "GetModuleListAsync",
+    "RelativePath": "api/Module/GetModuleListAsync",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.ModuleController",
+    "Method": "UpdateModuleAsync",
+    "RelativePath": "api/Module/UpdateModuleAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.module.ModuleEditRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.PageController",
+    "Method": "AddEditPageAsync",
+    "RelativePath": "api/Page/AddEditPageAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.pages.PagesRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.PageController",
+    "Method": "DeletePageAsync",
+    "RelativePath": "api/Page/DeletePageAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.pages.PageDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.PageController",
+    "Method": "GetPageListAsync",
+    "RelativePath": "api/Page/GetPageListAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.pages.GetPagesRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleController",
+    "Method": "AddEditRoleAsync",
+    "RelativePath": "api/Role/AddEditRoleAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Department.RoleRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleController",
+    "Method": "DeleteRoleAsync",
+    "RelativePath": "api/Role/DeleteRoleAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Department.RoleDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleController",
+    "Method": "GetRoleListAsync",
+    "RelativePath": "api/Role/GetRoleListAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.Department.GetRoleRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleAccessController",
+    "Method": "AddEditRoleAccessAsync",
+    "RelativePath": "api/RoleAccess/AddEditRoleAccessAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.RoleAccess.RoleAccessRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleAccessController",
+    "Method": "DeleteRoleAccessAsync",
+    "RelativePath": "api/RoleAccess/DeleteRoleAccessAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.RoleAccess.RoleAccessDeleteRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.RoleAccessController",
+    "Method": "GetRoleAccessListAsync",
+    "RelativePath": "api/RoleAccess/GetRoleAccessListAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.RoleAccess.GetRoleAccessRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetAssetTypeList",
+    "RelativePath": "api/Shared/GetAssetTypeList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetDepartmentList",
+    "RelativePath": "api/Shared/GetDepartmentList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetLevelList",
+    "RelativePath": "api/Shared/GetLevelList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetModuleList",
+    "RelativePath": "api/Shared/GetModuleList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetModuleListByDept",
+    "RelativePath": "api/Shared/GetModuleListByDept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.shared.GetDepartmentWiseRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetRoleList",
+    "RelativePath": "api/Shared/GetRoleList",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetRoleListByDept",
+    "RelativePath": "api/Shared/GetRoleListByDept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.shared.GetDepartmentWiseRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.UserController",
+    "Method": "CreateUserAsync",
+    "RelativePath": "api/User/CreateUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.UserMgt.CreateUserRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.UserController",
+    "Method": "DeleteUserAsync",
+    "RelativePath": "api/User/DeleteUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.UserMgt.DeleteUserRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.UserController",
+    "Method": "GetUserListAsync",
+    "RelativePath": "api/User/GetUserListAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.UserMgt.GetUserListRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.UserController",
+    "Method": "StatusUserAsync",
+    "RelativePath": "api/User/StatusUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.UserMgt.StatusUserRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.UserController",
+    "Method": "UpdateUserAsync",
+    "RelativePath": "api/User/UpdateUserAsync",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.UserMgt.UpdateUserRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

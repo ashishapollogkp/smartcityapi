@@ -28,6 +28,9 @@ namespace smartcityapi.Context
 
 		public DbSet<Master_Device> Master_Device { get; set; }
 
+		public DbSet<tbl_eventdata_log> tbl_eventdata_log { get; set; }
+		public DbSet<tbl_last_eventdata> tbl_last_eventdata { get; set; }
+
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
 			var data_string = _configuration.GetConnectionString("MySqlConn");
@@ -43,9 +46,11 @@ namespace smartcityapi.Context
 			//builder.Entity<customer_users>().ToTable(tb => tb.HasTrigger("trg_bI_customer_user"));
 			builder.Entity<role_permissions>().HasKey(c => new { c.fk_module_id, c.fk_page_id , c.fk_role_id});
 
+			builder.Entity<Master_Device>().ToTable(tb => tb.HasTrigger("trigger_customer_device_master"));
+
 			//builder.Entity<role_permissions>().HasNoKey();
 
-			
+
 		}
 
 

@@ -53,7 +53,7 @@ namespace smartcityapi.Controllers
 
 		[HttpGet]
 		[Route("GetLoginBasedModule")]
-		[Authorize]
+	
 		public async Task<ActionResult<ApiResponse>> GetLoginBasedModule()
 		{
 			try
@@ -75,7 +75,7 @@ namespace smartcityapi.Controllers
 
 		[HttpPost]
 		[Route("GetModuleBasedPages")]
-		[Authorize]
+		
 		public async Task<ActionResult<ApiResponse>> GetModuleBasedPages(GetModulePagesDTO dto)
 		{
 			try

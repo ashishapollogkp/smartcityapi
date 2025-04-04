@@ -7,8 +7,8 @@ namespace smartcityapi.Interface
 	public interface IDeviceService
 	{
 		Task<ApiResponse> GetDeviceList(GetDeviceRequestDTO request);
-		Task<ApiResponse> CreateDeviceType(CreateDeviceRequestDTO request);
-		Task<ApiResponse> UpdateDeviceType(UpdateDeviceRequestDTO request);
-		Task<ApiResponse> DeleteDeviceType(DeleteDeviceRequestDTO request);
+		Task<ApiResponse> CreateDevice(CreateDeviceRequestDTO request);
+		Task<ApiResponse> UpdateDevice(UpdateDeviceRequestDTO request);
+		Task<ApiResponse> DeleteDevice(DeleteDeviceRequestDTO request);
 	}
 }

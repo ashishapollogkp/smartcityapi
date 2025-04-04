@@ -326,6 +326,110 @@
     ]
   },
   {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "CreateDevice",
+    "RelativePath": "api/Device/CreateDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.CreateDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "DeleteDevice",
+    "RelativePath": "api/Device/DeleteDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.DeleteDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "GetDeviceList",
+    "RelativePath": "api/Device/GetDeviceList",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.Device.GetDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.DeviceController",
+    "Method": "UpdateDevice",
+    "RelativePath": "api/Device/UpdateDevice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "smartcityapi.Model.Device.UpdateDeviceRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "smartcityapi.Controllers.ModuleController",
     "Method": "CreateModuleAsync",
     "RelativePath": "api/Module/CreateModuleAsync",
@@ -739,6 +843,32 @@
   },
   {
     "ContainingType": "smartcityapi.Controllers.SharedController",
+    "Method": "GetModuleListByDept",
+    "RelativePath": "api/Shared/GetModuleListByDept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "smartcityapi.Model.shared.GetDepartmentWiseRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.SharedController",
     "Method": "GetRoleList",
     "RelativePath": "api/Shared/GetRoleList",
     "HttpMethod": "GET",
@@ -767,10 +897,30 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "smartcityapi.Model.shared.GetRoleListRequestDTO",
+        "Type": "smartcityapi.Model.shared.GetDepartmentWiseRequestDTO",
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "smartcityapi.Model.commanResponce.ApiResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "smartcityapi.Controllers.TransformerController",
+    "Method": "GetTransformerDashboard",
+    "RelativePath": "api/Transformer/GetTransformerDashboard",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "smartcityapi.Model.commanResponce.ApiResponse",

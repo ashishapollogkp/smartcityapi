@@ -13,5 +13,6 @@
 		public DateTime Device_Expiry_Date { get; set; }
 		public string SIM_No { get; set; }
 		public string SIM_Operator { get; set; }
+		public string Asset_Type_Name { get; set; }
 	}
 }

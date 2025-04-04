@@ -52,7 +52,7 @@ namespace smartcityapi.Services
 				module_name = request.Module_Name,
 				module_icon = request.Module_Icon,
 				module_url = request.Module_URL,
-				module_order = maxOrder + 1, // Ensure order consistency
+				module_order = request.Module_Order,
 				is_active = 1,
 				is_deleted = 0,
 				created_by = 1,
@@ -207,13 +207,8 @@ namespace smartcityapi.Services
 					{
 						updatedata.module_name = request.Module_Name;
 						updatedata.module_icon = request.Module_Icon;
-						//updatedata.module_order = request.Module_Order;
+						updatedata.module_order = request.Module_Order;
 						updatedata.module_url = request.Module_URL;
-				
-
-
-
-
 						updatedata.last_updated_by = 0;
 						updatedata.last_updated_date = DateTime.Now;
 

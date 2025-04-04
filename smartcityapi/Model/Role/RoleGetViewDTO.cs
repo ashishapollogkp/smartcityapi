@@ -11,5 +11,9 @@ namespace smartcityapi.Model.Department
 		public string Department_Name { get; set; }
 		public int is_active { get; set; }
 		public int is_deleted { get; set; }
+
+		public string Level_Name { get; set; }
+
+		public int? level_value { get; set; }
 	}
 }
